@@ -20,7 +20,3 @@ Python, PyTorch, torchvision, TensorBoard, PIL
 ## Dataset
 
 22 photonic crystal images (custom, not publicly available). Images resized to 64×64 and normalized to [-1, 1] for training.
-
-## Results
-
-![Generated Images](assets/tensorboard.png)
