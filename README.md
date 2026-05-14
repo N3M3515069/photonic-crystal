@@ -23,8 +23,4 @@ Python, PyTorch, torchvision, TensorBoard, PIL
 
 ## Results
 
-### TensorBoard — Training Progress
-![TensorBoard](assets/tensorboard.png)
-
-### Generated Images
-![Generated](assets/generated.png)
+![Generated Images](assets/tensorboard.png)
