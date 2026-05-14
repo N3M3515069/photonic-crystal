@@ -23,4 +23,8 @@ Python, PyTorch, torchvision, TensorBoard, PIL
 
 ## Results
 
+### Vanilla GAN — Final Epoch Output
 ![TensorBoard Output](tensorboard.png)
+
+> Fake images (top) show partial structural similarity to real photonic crystal images (bottom).
+> DCGAN results coming soon for comparison.
