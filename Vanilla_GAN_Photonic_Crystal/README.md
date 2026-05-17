@@ -17,6 +17,8 @@ Photonic crystals are periodic nanostructures that control the flow of light. Th
 ### Mode Collapse — Final Output
 G collapsed to producing near-identical outputs across all 22 fixed noise vectors by the final epoch. All generated images converged to the same averaged texture with no structural variation.
 
+![TensorBoard Output](assets/tensorboard.png)
+
 **Loss D: ~0.005 — Loss G: ~8.5** — D completely dominated, G stopped exploring.
 
 This is expected behavior for a fully connected GAN on 22 images with no spatial awareness.
