@@ -81,11 +81,11 @@ EPOCH: 2490/2500 | LOSS_D: 0.6956 | LOSS_G: 0.7347
 
 **Continuous (raw generator output):**
 
-![Continuous](generated_photonic_continuous.png)
+![Continuous](assets/generated_photonic_continuous.png)
 
 **Binary (threshold > 0.5):**
 
-![Binary](generated_photonic_binary.png)
+![Binary](assets/generated_photonic_binary.png)
 
 The binary output is obtained by applying a threshold of 0.5 to the raw output — values above 0.5 become 1 (silicon), below become 0 (air). This matches the paper's post-processing step.
 
