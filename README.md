@@ -15,7 +15,7 @@ Photonic crystals are periodic nanostructures that control the flow of light. Th
 | Notebook | Description | Status |
 |---|---|---|
 | Vanilla_GAN_Photonic_Crystal | Fully connected GAN baseline on 22 photonic crystal images | ✅ Done |
-| DCGAN_20x20 | Stage 1 — Convolutional GAN generating 20×20 photonic crystal images | 🔄 Coming soon |
+| DCGAN_20x20 | Stage 1 — Convolutional GAN generating 20×20 photonic crystal images | ✅ Done  |
 | DCGAN_200x200 | Stage 2 — Convolutional GAN enhancing 20×20 outputs to 200×200 | 🔄 Coming soon |
 
 ---
@@ -59,5 +59,10 @@ Fully connected architecture with no spatial awareness. Mode collapse observed �
 
 This confirms that fully connected layers cannot capture the geometric structure of photonic crystal images — motivating the DCGAN approach.
 
-### DCGAN — Coming Soon
-Results will be added as each stage is completed.
+### Stage 1 DCGAN — 20×20 Generation
+Losses converged to Nash equilibrium (~0.693) around epoch 500, stable through 2500 epochs. Binary output shows learned silicon-air structural patterns with some mode collapse expected from the 22-image dataset constraint.
+
+→ See `DCGAN_20x20/` for full results, architecture details, and generated images.
+
+### Stage 2 DCGAN — 200×200 Enhancement
+Coming soon.
