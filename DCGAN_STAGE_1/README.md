@@ -1,6 +1,6 @@
 # Photonic Crystal GAN — Stage 1 DCGAN
 
-PyTorch translation of the Stage 1 DCGAN from the paper:
+Independent PyTorch implementation of the Stage 1 DCGAN architecture described in:
 > *A deep learning approach for high-resolution and enhanced efficiency in photonic power dividers*
 > Cagatay N. Sengor, Feridun Ay, Cahit Perkgoz — Journal of Applied Physics, March 2025
 
@@ -9,6 +9,8 @@ PyTorch translation of the Stage 1 DCGAN from the paper:
 ## Overview
 
 This repository implements Stage 1 of a two-stage DCGAN pipeline for generating low-resolution (20×20) photonic crystal power divider patterns. The generator learns the structural distribution of high-efficiency silicon-air binary patterns from 22 real photonic crystal images.
+
+Architecture, training pipeline, and dataset loading were implemented independently in PyTorch from the paper's specifications, without reference to the original TensorFlow codebase.
 
 ---
 
@@ -79,11 +81,11 @@ EPOCH: 2490/2500 | LOSS_D: 0.6956 | LOSS_G: 0.7347
 
 **Continuous (raw generator output):**
 
-![Continuous](assets/generated_photonic_continuous.png)
+![Continuous](generated_photonic_continuous.png)
 
 **Binary (threshold > 0.5):**
 
-![Binary](assets/generated_photonic_binary.png)
+![Binary](generated_photonic_binary.png)
 
 The binary output is obtained by applying a threshold of 0.5 to the raw output — values above 0.5 become 1 (silicon), below become 0 (air). This matches the paper's post-processing step.
 
@@ -110,4 +112,4 @@ The paper trained on 2000+ efficiency-filtered images generated through an itera
 
 Sengor, C. N., Ay, F., & Perkgoz, C. (2025). A deep learning approach for high-resolution and enhanced efficiency in photonic power dividers. *Journal of Applied Physics*, 137, 124903. https://doi.org/10.1063/5.0255080
 
-Original TF/Keras implementation: https://github.com/cagataysengor/DCGAN-and-Photonic-Power-Dividers
+Original TensorFlow/Keras implementation by the paper's authors: https://github.com/cagataysengor/DCGAN-and-Photonic-Power-Dividers
