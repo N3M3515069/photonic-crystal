@@ -15,8 +15,8 @@ Photonic crystals are periodic nanostructures that control the flow of light. Th
 | Notebook | Description | Status |
 |---|---|---|
 | Vanilla_GAN_Photonic_Crystal | Fully connected GAN baseline on 22 photonic crystal images | ✅ Done |
-| DCGAN_20x20 | Stage 1 — Convolutional GAN generating 20×20 photonic crystal images | ✅ Done  |
-| DCGAN_200x200 | Stage 2 — Convolutional GAN enhancing 20×20 outputs to 200×200 | 🔄 Coming soon |
+| DCGAN_STAGE_1 | Stage 1 — Convolutional GAN generating 20×20 photonic crystal images | ✅ Done  |
+| DCGAN_STAGE_2 | Stage 2 — Convolutional GAN enhancing 20×20 outputs to 200×200 | 🔄 Coming soon |
 
 ---
 
