@@ -1,4 +1,4 @@
-# Photonic Crystal — Stage 1 DCGAN
+#  Stage 1 DCGAN — Photonic Crystal 
 
 Independent PyTorch implementation of the Stage 1 DCGAN architecture described in:
 > *A deep learning approach for high-resolution and enhanced efficiency in photonic power dividers*
