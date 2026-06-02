@@ -8,9 +8,7 @@ Independent PyTorch implementation of the Stage 1 DCGAN architecture described i
 
 ## Overview
 
-This repository implements Stage 1 of a two-stage DCGAN pipeline for generating low-resolution (20×20) photonic crystal power divider patterns. The generator learns the structural distribution of high-efficiency silicon-air binary patterns from 22 real photonic crystal images.
-
-Architecture, training pipeline, and dataset loading were implemented independently in PyTorch from the paper's specifications, without reference to the original TensorFlow codebase.
+This stage implements the Stage 1 DCGAN from the paper above — generating low-resolution (20×20) photonic crystal patterns from 22 real images. Architecture, training pipeline, and dataset loading were implemented independently in PyTorch from the paper's specifications, without reference to the original TensorFlow codebase.
 
 ---
 
@@ -27,21 +25,21 @@ Architecture, training pipeline, and dataset loading were implemented independen
 ### Generator
 | Layer | Details |
 |---|---|
-| Linear | 300 → 6400, He init |
+| Linear | 300 -> 6400, He init |
 | BatchNorm1d + LeakyReLU(0.3) | — |
 | Reshape | (batch, 256, 5, 5) |
-| ConvTranspose2d | 256→128, k=5, s=1, p=2, BN, LeakyReLU(0.3), He init |
-| ConvTranspose2d | 128→64, k=5, s=2, p=2, BN, LeakyReLU(0.3), He init |
-| ConvTranspose2d | 64→1, k=5, s=2, p=2, Tanh, Glorot init |
+| ConvTranspose2d | 256->128, k=5, s=1, p=2, BN, LeakyReLU(0.3), He init |
+| ConvTranspose2d | 128->64, k=5, s=2, p=2, BN, LeakyReLU(0.3), He init |
+| ConvTranspose2d | 64->1, k=5, s=2, p=2, Tanh, Glorot init |
 | **Output** | **(batch, 1, 20, 20)** |
 
 ### Discriminator
 | Layer | Details |
 |---|---|
-| Conv2d | 1→64, k=5, s=2, p=2, LeakyReLU(0.3), Dropout(0.3), He init |
-| Conv2d | 64→128, k=5, s=2, p=2, LeakyReLU(0.3), Dropout(0.3), He init |
-| Flatten | 128×5×5 = 3200 |
-| Linear | 3200→1, Glorot init |
+| Conv2d | 1->64, k=5, s=2, p=2, LeakyReLU(0.3), Dropout(0.3), He init |
+| Conv2d | 64->128, k=5, s=2, p=2, LeakyReLU(0.3), Dropout(0.3), He init |
+| Flatten | 128x5x5 = 3200 |
+| Linear | 3200->1, Glorot init |
 | **Output** | **(batch, 1) — no Sigmoid** |
 
 No BatchNorm in Discriminator. BatchNorm only in Generator.
@@ -53,13 +51,13 @@ No BatchNorm in Discriminator. BatchNorm only in Generator.
 | Parameter | Value |
 |---|---|
 | Noise dimension | 300 |
-| Image size | 20×20 |
+| Image size | 20x20 |
 | Channels | 1 (grayscale) |
 | Batch size | 22 |
 | Epochs | 2500 |
 | Learning rate | 1e-4 |
 | Optimizer | Adam (both G and D) |
-| Loss function | BCEWithLogitsLoss (from_logits=True) |
+| Loss function | BCEWithLogitsLoss |
 
 ---
 
@@ -87,7 +85,7 @@ EPOCH: 2490/2500 | LOSS_D: 0.6956 | LOSS_G: 0.7347
 
 ![Binary](assets/generated_photonic_binary.png)
 
-The binary output is obtained by applying a threshold of 0.5 to the raw output — values above 0.5 become 1 (silicon), below become 0 (air). This matches the paper's post-processing step.
+The binary output is obtained by applying a threshold of 0.5 to the raw output — values above 0.5 become 1 (silicon), below become 0 (air).
 
 ---
 
@@ -101,10 +99,9 @@ The paper trained on 2000+ efficiency-filtered images generated through an itera
 
 | File | Description |
 |---|---|
-| `Stage_1_DCGAN.ipynb` | Full training notebook |
-| `generated_photonic_continuous.png` | Raw generator output |
-| `generated_photonic_binary.png` | Binarized output (threshold=0.5) |
-| `photonic_images/` | Training dataset (22 images) |
+| `DCGAN_Stage1_Photonic_Crystal.ipynb` | Full training notebook |
+| `assets/generated_photonic_continuous.png` | Raw generator output |
+| `assets/generated_photonic_binary.png` | Binarized output (threshold=0.5) |
 
 ---
 
@@ -113,3 +110,7 @@ The paper trained on 2000+ efficiency-filtered images generated through an itera
 Sengor, C. N., Ay, F., & Perkgoz, C. (2025). A deep learning approach for high-resolution and enhanced efficiency in photonic power dividers. *Journal of Applied Physics*, 137, 124903. https://doi.org/10.1063/5.0255080
 
 Original TensorFlow/Keras implementation by the paper's authors: https://github.com/cagataysengor/DCGAN-and-Photonic-Power-Dividers
+
+---
+
+-> This stage established that 20x20 resolution and paper-spec constraints were insufficient for the actual goal. See `STABILIZED_DCGAN/` for the stage where paper constraints were dropped entirely in favour of the real 34-image dataset at 128x128.
