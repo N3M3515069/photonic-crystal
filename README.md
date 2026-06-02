@@ -55,6 +55,13 @@ Python, PyTorch, torchvision, OpenCV, TensorBoard, Matplotlib, PIL
 
 ## Visual Progression
 
+### Real Photonic Crystal — Training Data
+![Real Photonic Crystal](assets/real_sample.png)
+
+A sample from the 34-image Lumerical FDTD dataset. The target structure: periodic silicon-air hole lattice with a diagonal waveguide defect channel. This is what the GAN is learning to generate from random noise.
+
+---
+
 ### Stabilized DCGAN — 128×128
 ![Stabilized DCGAN Output](STABILIZED_DCGAN/assets/output.png)
 
