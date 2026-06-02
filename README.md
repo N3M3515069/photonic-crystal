@@ -32,7 +32,7 @@ Active research. V3 WGAN-GP is the current best result. The pipeline is being tu
 
 ```
 photonic-crystal-gan/
-├── Vanilla_GAN/   # Stage 1 — FC GAN baseline
+├── Vanilla_GAN/                    # Stage 1 — FC GAN baseline
 ├── DCGAN_STAGE_1/                  # Stage 2 — DCGAN, paper-spec 20×20
 ├── STABILIZED_DCGAN/               # Stage 3 — stabilised DCGAN, 128×128
 ├── V0_WGAN-GP/                     # Stage 4 — WGAN-GP baseline
