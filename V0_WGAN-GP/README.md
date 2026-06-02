@@ -69,13 +69,15 @@ Output: scalar (no Sigmoid)
 
 ## Results
 
-Immediate improvement in contrast over the stabilised DCGAN. Holes are visibly darker and more distinct against the background. The periodic lattice structure is more defined.
+Significant improvement over the stabilised DCGAN. Generated images show:
+- Sharp, well-defined circular holes across the periodic lattice
+- Strong contrast between holes and background — immediately better than DCGAN
+- Waveguide defect channel clearly visible as a diagonal band through the lattice
+- Consistent lattice structure across most of the image
 
-However, outputs are noisy. The GaussianBlur preprocessing was smoothing the training images, and the equalizeHist was artificially boosting contrast in ways that didn't transfer cleanly to generated outputs. The config was also not yet tuned for 128×128.
+Some noise present and lattice uniformity breaks down slightly toward the edges, but the core structure is substantially closer to the real dataset than anything the DCGAN produced.
 
-**Gap from real images:** High noise floor, some structural inconsistency at edges of the lattice.
-
--> Motivated preprocessing cleanup and config tuning in V3.
+-> Motivated resolution upgrade and preprocessing cleanup in V3.
 
 ![Generated Output](assets/output.png)
 
