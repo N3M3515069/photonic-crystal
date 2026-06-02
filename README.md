@@ -14,7 +14,7 @@ Each stage was motivated by a specific diagnosed failure mode in the previous on
 
 | Stage | Folder | Architecture | Key Result |
 |---|---|---|---|
-| 1 | `Vanilla_GAN_Photonic_Crystal` | Fully connected GAN | Mode collapse by epoch 300. Loss D ~0.005, Loss G ~8.5. Expected — FC layers destroy spatial structure. |
+| 1 | `Vanilla_GAN` | Fully connected GAN | Mode collapse by epoch 300. Loss D ~0.005, Loss G ~8.5. Expected — FC layers destroy spatial structure. |
 | 2 | `DCGAN_STAGE_1` | DCGAN (paper-spec, 20×20) | Partial mode collapse. Binary output collapsed to single structure. Blurry continuous output. 20×20 resolution too low for structural fidelity. |
 | 3 | `STABILIZED_DCGAN` | DCGAN with stabilisation techniques | Nash equilibrium (~0.693) achieved. Periodic hole lattice and waveguide defect channel topology learned. Blurry and low contrast — DCGAN's distribution-matching ceiling. |
 | 4 | `V0_WGAN-GP` | WGAN-GP (baseline config) | Strong contrast improvement over DCGAN. Sharp holes, visible waveguide defect channel. Some edge noise and lattice degradation at corners — motivated resolution upgrade. |
@@ -32,7 +32,7 @@ Active research. V3 WGAN-GP is the current best result. The pipeline is being tu
 
 ```
 photonic-crystal-gan/
-├── Vanilla_GAN_Photonic_Crystal/   # Stage 1 — FC GAN baseline
+├── Vanilla_GAN/   # Stage 1 — FC GAN baseline
 ├── DCGAN_STAGE_1/                  # Stage 2 — DCGAN, paper-spec 20×20
 ├── STABILIZED_DCGAN/               # Stage 3 — stabilised DCGAN, 128×128
 ├── V0_WGAN-GP/                     # Stage 4 — WGAN-GP baseline
