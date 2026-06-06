@@ -53,6 +53,17 @@ Python, PyTorch, torchvision, OpenCV, TensorBoard, Matplotlib, PIL
 
 ---
 
+├── pixel_mapping/                  # Validation — silicon hole diameter measurement
+---
+
+## Validation Utility
+
+### `pixel_mapping/` — Silicon Hole Diameter Measurement
+
+A standalone utility for measuring silicon hole diameter in pixels and nanometres from a cropped photonic crystal image. Used to compare hole geometry between the highest-accuracy real Lumerical FDTD image and GAN-generated outputs — the junction area (60-degree waveguide bend) is specifically targeted as the most physically critical region.
+
+See `pixel_mapping/README.md` for full details.
+
 ## Visual Progression
 
 ### Real Photonic Crystal — Training Data
