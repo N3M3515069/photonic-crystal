@@ -23,6 +23,6 @@ def measure_silicon_diameter(path, scale_factor):
 
 if __name__ == '__main__':
     measure_silicon_diameter(
-        path= r'C:\Vscode_Python\Pixel_Mapping\silicons\cropped_generated_0.png',
+        path= r'path/to/your/cropped_circle.png', # update this path
         scale_factor= 5/15
         )
