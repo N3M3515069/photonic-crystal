@@ -37,6 +37,7 @@ photonic-crystal-gan/
 ├── STABILIZED_DCGAN/               # Stage 3 — stabilised DCGAN, 128×128
 ├── V0_WGAN-GP/                     # Stage 4 — WGAN-GP baseline
 └── V3_WGAN-GP/                     # Stage 5 — WGAN-GP tuned, 256×256 (current best)
+├── pixel_mapping/                  # Validation — silicon hole diameter measurement
 ```
 
 ---
@@ -51,9 +52,6 @@ photonic-crystal-gan/
 
 Python, PyTorch, torchvision, OpenCV, TensorBoard, Matplotlib, PIL
 
----
-
-├── pixel_mapping/                  # Validation — silicon hole diameter measurement
 ---
 
 ## Validation Utility
