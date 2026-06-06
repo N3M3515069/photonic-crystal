@@ -36,8 +36,8 @@ photonic-crystal-gan/
 ├── DCGAN_STAGE_1/                  # Stage 2 — DCGAN, paper-spec 20×20
 ├── STABILIZED_DCGAN/               # Stage 3 — stabilised DCGAN, 128×128
 ├── V0_WGAN-GP/                     # Stage 4 — WGAN-GP baseline
-└── V3_WGAN-GP/                     # Stage 5 — WGAN-GP tuned, 256×256 (current best)
-├── pixel_mapping/                  # Validation — silicon hole diameter measurement
+├── V3_WGAN-GP/                     # Stage 5 — WGAN-GP tuned, 256×256 (current best)
+└── pixel_mapping/                  # Validation — silicon hole diameter measurement
 ```
 
 ---
@@ -61,6 +61,8 @@ Python, PyTorch, torchvision, OpenCV, TensorBoard, Matplotlib, PIL
 A standalone utility for measuring silicon hole diameter in pixels and nanometres from a cropped photonic crystal image. Used to compare hole geometry between the highest-accuracy real Lumerical FDTD image and GAN-generated outputs — the junction area (60-degree waveguide bend) is specifically targeted as the most physically critical region.
 
 See `pixel_mapping/README.md` for full details.
+
+---
 
 ## Visual Progression
 
