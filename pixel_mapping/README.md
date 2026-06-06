@@ -6,7 +6,7 @@ Utility for measuring the diameter of silicon holes in photonic crystal images, 
 
 ## Purpose
 
-The professor's validation workflow requires comparing the silicon hole geometry of GAN-generated images against the highest-accuracy real image from the dataset. This tool measures the diameter of a single cropped silicon hole from both images so the structural difference can be quantified before running full Lumerical FDTD simulation.
+This tool measures the diameter of a single cropped silicon hole from both a real Lumerical FDTD image and a GAN-generated output so the structural difference can be quantified before running full Lumerical FDTD simulation.
 
 ---
 
