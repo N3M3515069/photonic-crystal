@@ -26,10 +26,10 @@ def measure_silicon_diameter(path, lumerical_nm= None, reference_px= None):
     return diameter_px
 
 if __name__ == '__main__':
-    # first function call to find the diamter of the original silicon
+    # first function call to find the diameter of the original silicon
     reference_px= measure_silicon_diameter(path=r'C:\Vscode_Python\Pixel_Mapping\silicons\cropped_fig28_.740113.jpg') # use the original silicon img path
 
-    # second function call to apply the found diamter value and lumerical_nm value in order to get diameter in nm
+    # second function call to apply the found diameter value and lumerical_nm value in order to get diameter in nm
     measure_silicon_diameter(path=r'C:\Vscode_Python\Pixel_Mapping\silicons\cropped_generated_0.png', # use the generated silicon img path
                              reference_px=reference_px,
                              lumerical_nm=5) # physical diameter of the real silicon hole as designed in Lumerical (in nm)
